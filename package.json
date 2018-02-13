@@ -44,6 +44,7 @@
     "setupFiles": [
       "<rootDir>/scripts/jest-setup.js"
     ],
+    "setupTestFrameworkScriptFile": "jest-enzyme/lib/index.js",
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ],

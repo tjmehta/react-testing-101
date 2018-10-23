@@ -1,39 +1,46 @@
-import { PureComponent } from 'react'
+import { PureComponent } from 'react';
 
-let id = 0
+import TodoModel from './models/todo-model';
+
+let id = 0;
 
 export default class CreateTodoForm extends PureComponent {
-  state = {
-    name: '',
-  }
-  handleInputChange = e => {
-    this.setState({
-      name: e.target.value,
-    })
-  }
-  handleSubmit = e => {
-    e.preventDefault()
-    const name = this.state.name.trim()
-    if (!name) return
-    const { onSubmit } = this.props
-    if (onSubmit) {
-      onSubmit({
-        id: ++id,
-        name: name,
-      })
+    state = {
+        text: '',
+    };
+    _handleInputChange = e => {
+        this.setState({
+            text: e.target.value,
+        });
+    };
+    _handleSubmit = e => {
+        e.preventDefault();
+        const text = this.state.text.trim();
+        if (!text) return;
+        const { onTodoAdded } = this.props;
+        if (onTodoAdded) {
+            onTodoAdded(
+                new TodoModel({
+                    id: ++id,
+                    text: text,
+                }),
+            );
+        }
+        this.setState({
+            text: '',
+        });
+    };
+    render() {
+        return (
+            <form onSubmit={this._handleSubmit}>
+                <span>
+                    <input
+                        onChange={this._handleInputChange}
+                        value={this.state.text}
+                    />{' '}
+                    <button>Save</button>
+                </span>
+            </form>
+        );
     }
-    this.setState({
-      name: '',
-    })
-  }
-  render() {
-    return (
-      <form onSubmit={this.handleSubmit}>
-        <span>
-          <input onChange={this.handleInputChange} value={this.state.name} />{' '}
-          <button>Save</button>
-        </span>
-      </form>
-    )
-  }
 }

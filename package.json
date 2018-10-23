@@ -1,65 +1,68 @@
 {
-  "name": "create-next-example-app",
-  "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start",
-    "test": "jest",
-    "test-watch": "jest -w",
-    "format": "prettier --write components/* pages/* scripts/* components/**/* pages/**/* scripts/**/*"
-  },
-  "dependencies": {
-    "components": "^0.1.0",
-    "next": "5.0.0",
-    "react": "16.2.0",
-    "react-dom": "16.2.0",
-    "redux": "^3.7.2",
-    "redux-thunk": "^2.2.0"
-  },
-  "devDependencies": {
-    "babel-eslint": "^8.2.1",
-    "babel-jest": "^22.2.2",
-    "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1",
-    "enzyme-to-json": "^3.3.1",
-    "eslint": "^4.17.0",
-    "eslint-config-prettier": "^2.9.0",
-    "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-prettier": "^2.6.0",
-    "jest": "^22.2.2",
-    "jest-enzyme": "^4.2.0",
-    "prettier": "^1.10.2"
-  },
-  "eslintConfig": {
-    "parser": "babel-eslint",
-    "extends": [
-      "plugin:prettier/recommended"
-    ]
-  },
-  "jest": {
-    "automock": true,
-    "clearMocks": true,
-    "resetModules": true,
-    "restoreMocks": true,
-    "setupFiles": [
-      "<rootDir>/scripts/jest-setup.js"
-    ],
-    "setupTestFrameworkScriptFile": "jest-enzyme/lib/index.js",
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ],
-    "testMatch": [
-      "**/__tests__/**/*.test.js",
-      "**/__tests__/**/*.unit.js"
-    ],
-    "unmockedModulePathPatterns": [
-      "/node_modules/",
-      "/fixtures/"
-    ]
-  },
-  "prettier": {
-    "semi": false,
-    "singleQuote": true,
-    "trailingComma": "all"
-  }
+    "name": "create-next-example-app",
+    "scripts": {
+        "dev": "next",
+        "build": "next build",
+        "start": "next start",
+        "test": "jest",
+        "test-watch": "jest --watch",
+        "format": "prettier --write components/* pages/* scripts/* components/**/* pages/**/* scripts/**/*"
+    },
+    "dependencies": {
+        "components": "^0.1.0",
+        "lodash": "^4.17.11",
+        "next": "5.0.0",
+        "react": "16.2.0",
+        "react-dom": "16.2.0",
+        "redux": "^3.7.2",
+        "redux-thunk": "^2.2.0"
+    },
+    "devDependencies": {
+        "babel-eslint": "^8.2.1",
+        "babel-jest": "^22.2.2",
+        "enzyme": "^3.3.0",
+        "enzyme-adapter-react-16": "^1.1.1",
+        "enzyme-to-json": "^3.3.1",
+        "eslint": "^4.17.0",
+        "eslint-config-prettier": "^2.9.0",
+        "eslint-plugin-import": "^2.8.0",
+        "eslint-plugin-prettier": "^2.6.0",
+        "jest": "^22.2.2",
+        "jest-enzyme": "^4.2.0",
+        "prettier": "^1.14.3"
+    },
+    "eslintConfig": {
+        "parser": "babel-eslint",
+        "extends": [
+            "plugin:prettier/recommended"
+        ]
+    },
+    "jest": {
+        "automock": true,
+        "clearMocks": true,
+        "resetModules": true,
+        "restoreMocks": true,
+        "setupFiles": [
+            "<rootDir>/scripts/jest-setup.js"
+        ],
+        "setupTestFrameworkScriptFile": "jest-enzyme/lib/index.js",
+        "snapshotSerializers": [
+            "enzyme-to-json/serializer"
+        ],
+        "testMatch": [
+            "**/__tests__/**/*.test.js",
+            "**/__tests__/**/*.unit.js"
+        ],
+        "unmockedModulePathPatterns": [
+            "/node_modules/",
+            "/fixtures/",
+            "/models/"
+        ]
+    },
+    "prettier": {
+        "semi": true,
+        "singleQuote": true,
+        "tabWidth": 4,
+        "trailingComma": "all"
+    }
 }
